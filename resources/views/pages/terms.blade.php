@@ -230,7 +230,7 @@
                                 Your use of this website is also governed by our Privacy Policy, which explains how information submitted or collected through the website may be handled.
                             </p>
                             <p>
-                                Privacy Policy: <a href="{{ route('privacy') }}" class="text-primary font-weight-bold">/privacy-policy</a>
+                                Privacy Policy: <a href="{{ route('privacy-policy') }}" class="text-primary font-weight-bold">/privacy-policy</a>
                             </p>
 
                             <!-- Section 15 -->
