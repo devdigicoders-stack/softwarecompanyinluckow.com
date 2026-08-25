@@ -247,7 +247,6 @@
                             <p>
                                 Any dispute arising in connection with these Terms shall be subject to the applicable jurisdiction of courts in Lucknow, Uttar Pradesh, India, unless otherwise required by applicable law or a separate written agreement.
                             </p>
-
                             <!-- Section 17 -->
                             <h3 class="fw-bold text-slate-900 mt-4 mb-3"><i class="bi bi-envelope-fill text-primary me-2"></i> 17. Contact Us</h3>
                             <p>For questions regarding these Terms &amp; Conditions, contact us:</p>
