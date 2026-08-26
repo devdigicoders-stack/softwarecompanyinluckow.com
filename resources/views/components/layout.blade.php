@@ -58,7 +58,7 @@
             <div class="d-flex align-items-center gap-4">
                 <a href="{{ route('about') }}" class="text-slate-300 text-decoration-none hover-text-white">About Us</a>
                 <a href="{{ route('contact') }}" class="text-slate-300 text-decoration-none hover-text-white">Contact Us</a>
-                <a href="{{ route('blog.index') }}" class="text-slate-300 text-decoration-none hover-text-white">Write for Us</a>
+                <a href="{{ route('blogs.index') }}" class="text-slate-300 text-decoration-none hover-text-white">Write for Us</a>
             </div>
         </div>
     </div>
@@ -238,7 +238,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link {{ request()->is('blog*') ? 'active' : '' }}" href="{{ route('blog.index') }}">Blog</a>
+                            <a class="nav-link {{ request()->is('blogs*') ? 'active' : '' }}" href="{{ route('blogs.index') }}">Blogs</a>
                         </li>
                         <!-- Best Web Tech Mega Menu Dropdown -->
                         <li class="nav-item dropdown dropdown-mega position-static">
@@ -478,7 +478,7 @@
                         <li><a href="{{ route('solutions.show', 'erp-software-in-lucknow') }}">Software Solutions</a></li>
                         <li><a href="{{ route('technology.show', 'laravel-development') }}">Technologies</a></li>
                         <li><a href="{{ route('cost-guides.index') }}">Cost Guides</a></li>
-                        <li><a href="{{ route('blog.index') }}">Blog</a></li>
+                        <li><a href="{{ route('blogs.index') }}">Blogs</a></li>
                         <li><a href="{{ route('services.show', 'software-development-companies-in-lucknow') }}">Companies</a></li>
                         <li><a href="{{ route('contact') }}">Contact Us</a></li>
                     </ul>

@@ -69,9 +69,8 @@ Route::get('/best-technology-for-website-development', [TechnologyController::cl
 Route::get('/technology/{slug}', [TechnologyController::class, 'show'])->name('technology.show');
 
 // Blog & Tech News Routes
-Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
-Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
-
+Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
+Route::get('/blogs/{slug}', [BlogController::class, 'show'])->name('blogs.show');
 // Local Lucknow IT Hub Routes
 Route::get('/location/{slug}', [LocationController::class, 'show'])->name('locations.show');
 
@@ -152,6 +151,7 @@ Route::prefix('admin')->group(function () {
         Route::post('/blogs/{post}/toggle-featured', [AdminPostController::class, 'toggleFeatured'])->name('admin.posts.toggle-featured');
         Route::post('/blogs/{post}/toggle-trending', [AdminPostController::class, 'toggleTrending'])->name('admin.posts.toggle-trending');
         Route::post('/blogs/{post}/toggle-popular', [AdminPostController::class, 'togglePopular'])->name('admin.posts.toggle-popular');
+        Route::get('/blogs/{post}/ip-views', [AdminPostController::class, 'getIpViews'])->name('admin.posts.ip-views');
 
         // Category, Tag & Author Management
         Route::resource('categories', AdminCategoryController::class, ['as' => 'admin']);

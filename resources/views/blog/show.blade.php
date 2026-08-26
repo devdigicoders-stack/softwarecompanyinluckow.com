@@ -2,7 +2,7 @@
     :title="$post->meta_title ?? ($post->title . ' | Software Company in Lucknow')"
     :description="$post->meta_description ?? $post->excerpt"
     :keywords="$post->meta_keywords ?? (isset($post->tags) && count($post->tags) > 0 ? implode(', ', $post->tags->pluck('name')->toArray()) : ($post->title . ', software company in lucknow, IT blog lucknow'))"
-    :canonical="$post->canonical_url ?? route('blog.show', $post->slug)"
+    :canonical="$post->canonical_url ?? route('blogs.show', $post->slug)"
     :post="$post"
     :faqs="$post->faqs"
     :breadcrumbs="$breadcrumbs"
@@ -80,7 +80,7 @@
                 <div class="col-12">
                     @if($post->category)
                         <div class="article-category mb-2">
-                            <a href="{{ route('blog.index', ['category' => $post->category->slug]) }}" class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill px-3 py-2 text-decoration-none fw-bold" style="font-size: 0.78rem;">
+                            <a href="{{ route('blogs.index', ['category' => $post->category->slug]) }}" class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill px-3 py-2 text-decoration-none fw-bold" style="font-size: 0.78rem;">
                                 <i class="bi bi-folder-fill me-1"></i> {{ $post->category->name }}
                             </a>
                         </div>
@@ -97,7 +97,8 @@
                                 <span>
                                     {{ $post->author ? ($post->author->role ?? 'Software Architect') : 'Technical Writer' }} &bull;
                                     Published {{ $post->published_at ? $post->published_at->format('M d, Y') : $post->created_at->format('M d, Y') }} 
-                                    &bull; <i class="bi bi-clock me-1"></i> {{ $post->reading_time_minutes }} min read
+                                    &bull; <i class="bi bi-clock me-1 text-emerald-600"></i> {{ $post->reading_time_minutes }} min read
+                                    &bull; <i class="bi bi-eye me-1 text-emerald-600"></i> {{ number_format($post->view_count) }} Views
                                 </span>
                             </div>
                         </div>
@@ -153,7 +154,7 @@
                             <div class="mt-5 pt-4 border-top d-flex flex-wrap align-items-center gap-2">
                                 <span class="fw-bold text-slate-700 me-2"><i class="bi bi-tags me-1 text-primary"></i> Topics & Tags:</span>
                                 @foreach($post->tags as $tag)
-                                    <a href="{{ route('blog.index', ['tag' => $tag->slug]) }}" class="topic-tag-pill">
+                                    <a href="{{ route('blogs.index', ['tag' => $tag->slug]) }}" class="topic-tag-pill">
                                         #{{ $tag->name }}
                                     </a>
                                 @endforeach
@@ -248,7 +249,7 @@
                                         }
                                     @endphp
                                     <div class="d-flex align-items-center gap-3 mb-3 pb-3 border-bottom last-border-0">
-                                        <a href="{{ route('blog.show', $relPost->slug) }}" class="flex-shrink-0 d-block rounded-3 overflow-hidden shadow-xs" style="width: 72px; height: 54px; background: #0f172a;">
+                                        <a href="{{ route('blogs.show', $relPost->slug) }}" class="flex-shrink-0 d-block rounded-3 overflow-hidden shadow-xs" style="width: 72px; height: 54px; background: #0f172a;">
                                             <img src="{{ $relImg }}" alt="{{ $relPost->title }}" class="w-100 h-100" style="object-fit: cover;" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=200&q=80';">
                                         </a>
                                         <div class="flex-grow-1">
@@ -256,7 +257,7 @@
                                                 <span class="sidebar-cat-badge mb-1 text-uppercase font-monospace fw-bold" style="font-size: 0.68rem; color: #059669; background: #ecfdf5; padding: 2px 7px; border-radius: 4px;">{{ $relPost->category->name }}</span>
                                             @endif
                                             <h6 class="fw-bold mb-1 mt-0.5" style="font-size: 0.88rem; line-height: 1.35;">
-                                                <a href="{{ route('blog.show', $relPost->slug) }}" class="text-slate-900 text-decoration-none hover-text-primary">
+                                                <a href="{{ route('blogs.show', $relPost->slug) }}" class="text-slate-900 text-decoration-none hover-text-primary">
                                                     {{ Str::limit($relPost->title, 55) }}
                                                 </a>
                                             </h6>

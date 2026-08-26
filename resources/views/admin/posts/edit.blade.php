@@ -38,7 +38,7 @@
                 <h3 class="fw-bold text-slate-900 mb-0" style="color: #0f172a;">Edit Blog Article</h3>
             </div>
             <div class="d-flex gap-2">
-                <a href="{{ route('blog.show', $post->slug) }}" target="_blank" class="btn btn-glass-outline">
+                <a href="{{ route('blogs.show', $post->slug) }}" target="_blank" class="btn btn-glass-outline">
                     <i class="bi bi-eye me-1"></i> Preview Live
                 </a>
                 <button type="submit" class="btn btn-glass-primary">
@@ -65,7 +65,7 @@
                     <div class="mb-3">
                         <label for="slug" class="glass-label">URL Slug</label>
                         <div class="input-group">
-                            <span class="input-group-text bg-white border-end-0 text-muted small">/blog/</span>
+                            <span class="input-group-text bg-white border-end-0 text-muted small">/blogs/</span>
                             <input type="text" name="slug" id="slug" class="form-control glass-input border-start-0 @error('slug') is-invalid @enderror" value="{{ old('slug', $post->slug) }}" required>
                         </div>
                         @error('slug')<div class="text-danger small mt-1">{{ $message }}</div>@enderror
@@ -229,7 +229,7 @@
 
                         <div class="google-preview-card">
                             <div class="google-preview-url">
-                                softwarecompanyinlucknow.com <cite id="googlePreviewSlug">/blog/{{ $post->slug }}</cite>
+                                softwarecompanyinlucknow.com <cite id="googlePreviewSlug">/blogs/{{ $post->slug }}</cite>
                             </div>
                             <a href="javascript:void(0)" class="google-preview-title d-block" id="googlePreviewTitle">
                                 {{ $post->meta_title ?: $post->title }} | Software Company in Lucknow
@@ -442,7 +442,7 @@
                 const currentDesc = metaDescInput.value || excerptInput.value || 'Article summary...';
 
                 googleTitle.textContent = currentTitle + ' | Software Company in Lucknow';
-                googleSlug.textContent = '/blog/' + currentSlug;
+                googleSlug.textContent = '/blogs/' + currentSlug;
                 googleDesc.textContent = currentDesc;
 
                 const tLen = currentTitle.length;

@@ -144,7 +144,7 @@ class BlogSeeder extends Seeder
                 'meta_title' => 'Software Development Cost in Lucknow (2026) | Complete Price Guide',
                 'meta_description' => 'Comprehensive 2026 pricing guide for custom software development in Lucknow. Detailed cost breakdown for web apps, mobile apps, ERPs, and CRMs.',
                 'meta_keywords' => 'software development cost in lucknow, custom software price lucknow, website development cost lucknow, mobile app cost lucknow, erp cost in lucknow',
-                'canonical_url' => route('blog.show', 'software-development-cost-in-lucknow'),
+                'canonical_url' => route('blogs.show', 'software-development-cost-in-lucknow'),
                 'schema_type' => 'BlogPosting',
                 'faqs' => [
                     ['question' => 'What is the minimum budget for custom software in Lucknow?', 'answer' => 'Basic custom business applications start from ₹25,000, while feature-rich web applications average ₹75,000 to ₹1.8 Lakhs.'],
@@ -222,7 +222,7 @@ class BlogSeeder extends Seeder
                 'meta_title' => 'Best Software Companies in Lucknow (2026) | Top Ranked IT Firms',
                 'meta_description' => 'Comprehensive ranking of the best software development companies in Lucknow. Compare top IT agencies for web development, mobile apps, and custom ERPs.',
                 'meta_keywords' => 'best software company in lucknow, top it company in lucknow, software development company in lucknow, website development company lucknow',
-                'canonical_url' => route('blog.show', 'best-software-company-in-lucknow'),
+                'canonical_url' => route('blogs.show', 'best-software-company-in-lucknow'),
                 'schema_type' => 'BlogPosting',
                 'faqs' => [
                     ['question' => 'Which is the top software development company in Lucknow?', 'answer' => 'Software Company in Lucknow is ranked #1 for custom enterprise software, Laravel development, Flutter mobile apps, and ERP implementations.'],
@@ -279,7 +279,7 @@ class BlogSeeder extends Seeder
                 'meta_title' => 'Software Development Companies in Lucknow | Tech Hub Analysis',
                 'meta_description' => 'In-depth analysis of software development companies in Lucknow. Discover tech specializations, industry impact, and engineering standards.',
                 'meta_keywords' => 'software development companies in lucknow, lucknow it hub, software engineering lucknow, it companies lucknow',
-                'canonical_url' => route('blog.show', 'software-development-companies-in-lucknow'),
+                'canonical_url' => route('blogs.show', 'software-development-companies-in-lucknow'),
                 'schema_type' => 'BlogPosting',
                 'faqs' => [
                     ['question' => 'Why are companies choosing Lucknow for software development?', 'answer' => 'Lucknow offers top engineering talent, 40-50% cost savings compared to metros, low team turnover, and modern IT infrastructure.'],
@@ -339,7 +339,7 @@ class BlogSeeder extends Seeder
                 'meta_title' => 'Website Development Cost in Lucknow (2026) | Price Breakdown',
                 'meta_description' => 'Discover website development costs in Lucknow. Detailed price breakdown for corporate sites, e-commerce stores, and custom web applications.',
                 'meta_keywords' => 'website development cost in lucknow, web design price lucknow, ecommerce website cost lucknow, website cost in lucknow',
-                'canonical_url' => route('blog.show', 'website-development-cost-in-lucknow'),
+                'canonical_url' => route('blogs.show', 'website-development-cost-in-lucknow'),
                 'schema_type' => 'BlogPosting',
                 'faqs' => [
                     ['question' => 'How much does a basic business website cost in Lucknow?', 'answer' => 'A professional 5-page business website ranges between ₹15,000 and ₹25,000.'],
@@ -399,7 +399,7 @@ class BlogSeeder extends Seeder
                 'meta_title' => 'Mobile App Development Cost in Lucknow (2026) | Android & iOS',
                 'meta_description' => 'Complete price breakdown for mobile app development in Lucknow. Compare Flutter cross-platform app costs, features, and Play Store publishing.',
                 'meta_keywords' => 'mobile app development cost in lucknow, android app cost lucknow, flutter app price lucknow, ios app cost lucknow',
-                'canonical_url' => route('blog.show', 'mobile-app-development-cost-in-lucknow'),
+                'canonical_url' => route('blogs.show', 'mobile-app-development-cost-in-lucknow'),
                 'schema_type' => 'BlogPosting',
                 'faqs' => [
                     ['question' => 'How much does mobile app development cost in Lucknow?', 'answer' => 'Cross-platform Flutter apps range from ₹45,000 for standard apps to ₹2.5+ Lakhs for complex on-demand delivery portals.'],
@@ -459,7 +459,7 @@ class BlogSeeder extends Seeder
                 'meta_title' => 'ERP Software Cost in Lucknow (2026) | Custom ERP Price Guide',
                 'meta_description' => 'Comprehensive ERP software implementation cost guide in Lucknow. Compare custom ERP modules, licensing, and implementation timelines.',
                 'meta_keywords' => 'erp software cost in lucknow, erp pricing lucknow, custom erp development lucknow, enterprise erp lucknow',
-                'canonical_url' => route('blog.show', 'erp-software-cost-in-lucknow'),
+                'canonical_url' => route('blogs.show', 'erp-software-cost-in-lucknow'),
                 'schema_type' => 'BlogPosting',
                 'faqs' => [
                     ['question' => 'How much does ERP software cost in Lucknow?', 'answer' => 'Custom ERP software ranges from ₹1.5 Lakhs for mid-market setups to ₹15+ Lakhs for complex multi-facility enterprise suites.'],
@@ -516,7 +516,7 @@ class BlogSeeder extends Seeder
                 'meta_title' => 'CRM Software Cost in Lucknow (2026) | Sales Automation Price',
                 'meta_description' => 'Detailed CRM software development cost guide in Lucknow. Learn pricing for lead tracking, WhatsApp automation, and sales pipeline tools.',
                 'meta_keywords' => 'crm software cost in lucknow, crm price lucknow, lead management software lucknow, sales automation lucknow',
-                'canonical_url' => route('blog.show', 'crm-software-cost-in-lucknow'),
+                'canonical_url' => route('blogs.show', 'crm-software-cost-in-lucknow'),
                 'schema_type' => 'BlogPosting',
                 'faqs' => [
                     ['question' => 'How much does custom CRM software cost in Lucknow?', 'answer' => 'Custom CRM software ranges from ₹45,000 for core lead tracking to ₹1.8 Lakhs for automated omni-channel sales systems.'],
@@ -572,7 +572,7 @@ class BlogSeeder extends Seeder
                 'meta_title' => 'How to Choose a Software Company in Lucknow | 7-Step Checklist',
                 'meta_description' => '7 essential steps for choosing the best software development company in Lucknow. Avoid traps and ensure code ownership and SLA support.',
                 'meta_keywords' => 'how to choose software company lucknow, hiring software developers lucknow, software agency evaluation lucknow',
-                'canonical_url' => route('blog.show', 'how-to-choose-software-company-in-lucknow'),
+                'canonical_url' => route('blogs.show', 'how-to-choose-software-company-in-lucknow'),
                 'schema_type' => 'BlogPosting',
                 'faqs' => [
                     ['question' => 'What is the most important clause in a software contract?', 'answer' => '100% Intellectual Property (IP) and full source code ownership assignment upon project completion.'],
@@ -620,7 +620,7 @@ class BlogSeeder extends Seeder
                 'meta_title' => 'Custom Software for Small Businesses (2026) | Automation Guide',
                 'meta_description' => 'Learn how custom software development drives SME growth in Lucknow. Automate workflows, reduce costs, and own your business software.',
                 'meta_keywords' => 'custom software for small business, sme software lucknow, business automation software lucknow',
-                'canonical_url' => route('blog.show', 'custom-software-development-for-small-businesses'),
+                'canonical_url' => route('blogs.show', 'custom-software-development-for-small-businesses'),
                 'schema_type' => 'BlogPosting',
                 'faqs' => [
                     ['question' => 'Is custom software affordable for small businesses in Lucknow?', 'answer' => 'Yes. Tailored small business automation tools start from ₹35,000 to ₹85,000.'],
@@ -678,7 +678,7 @@ class BlogSeeder extends Seeder
                 'meta_title' => '10 Benefits of Custom Software for Businesses in 2026',
                 'meta_description' => 'Discover 10 powerful advantages of custom software development. Scalability, 100% source code ownership, zero license fees, and high security.',
                 'meta_keywords' => 'benefits of custom software, custom software vs saas, enterprise software advantages',
-                'canonical_url' => route('blog.show', 'benefits-of-custom-software-for-businesses'),
+                'canonical_url' => route('blogs.show', 'benefits-of-custom-software-for-businesses'),
                 'schema_type' => 'BlogPosting',
                 'faqs' => [
                     ['question' => 'What is the biggest advantage of custom software?', 'answer' => '100% exact alignment with your operational workflows combined with full source code ownership.'],
@@ -732,7 +732,7 @@ class BlogSeeder extends Seeder
                 'meta_title' => 'ERP vs CRM Difference (2026) | Which Software Do You Need First?',
                 'meta_description' => 'Understand the architectural differences between ERP and CRM software. Learn feature comparisons and discover which system your business needs first.',
                 'meta_keywords' => 'erp vs crm difference, erp or crm first, business software comparison, crm erp integration',
-                'canonical_url' => route('blog.show', 'erp-vs-crm-difference'),
+                'canonical_url' => route('blogs.show', 'erp-vs-crm-difference'),
                 'schema_type' => 'BlogPosting',
                 'faqs' => [
                     ['question' => 'What is the main difference between ERP and CRM?', 'answer' => 'CRM drives sales and front-office customer relations, whereas ERP manages back-office operations like inventory, accounting, and HR.'],
@@ -781,7 +781,7 @@ class BlogSeeder extends Seeder
                 'meta_title' => 'What Is HRMS Software? (2026) | Modules & Payroll Guide',
                 'meta_description' => 'Learn what HRMS software is, key modules, biometric attendance machine integration, and automated salary slip generation for businesses.',
                 'meta_keywords' => 'what is hrms software, hrms software lucknow, payroll automation software, biometric attendance hrms',
-                'canonical_url' => route('blog.show', 'what-is-hrms-software'),
+                'canonical_url' => route('blogs.show', 'what-is-hrms-software'),
                 'schema_type' => 'BlogPosting',
                 'faqs' => [
                     ['question' => 'What does HRMS software stand for?', 'answer' => 'HRMS stands for Human Resource Management System.'],
@@ -835,7 +835,7 @@ class BlogSeeder extends Seeder
                 'meta_title' => 'School Management Software Features (2026) | ERP Checklist',
                 'meta_description' => 'Complete checklist of essential school management software features. Fee collection, parent app, marksheets, and bus GPS tracking.',
                 'meta_keywords' => 'school management software lucknow, school erp features, school software lucknow, parent teacher app',
-                'canonical_url' => route('blog.show', 'school-management-software-features'),
+                'canonical_url' => route('blogs.show', 'school-management-software-features'),
                 'schema_type' => 'BlogPosting',
                 'faqs' => [
                     ['question' => 'What is school management software?', 'answer' => 'School ERP software centralizes student records, fee collection, online marksheets, attendance, and parent communication into one portal.'],
@@ -890,7 +890,7 @@ class BlogSeeder extends Seeder
                 'meta_title' => 'Hospital Management Software Guide (2026) | HMS & EMR Systems',
                 'meta_description' => 'Complete guide to hospital management software in Lucknow. OPD/IPD billing, EMR digital prescriptions, pathology lab, and TPA insurance.',
                 'meta_keywords' => 'hospital management software lucknow, hms software lucknow, clinic management software, pathology lab software',
-                'canonical_url' => route('blog.show', 'hospital-management-software-guide'),
+                'canonical_url' => route('blogs.show', 'hospital-management-software-guide'),
                 'schema_type' => 'BlogPosting',
                 'faqs' => [
                     ['question' => 'What is hospital management software (HMS)?', 'answer' => 'HMS software manages OPD patient queues, IPD bed admissions, electronic medical records (EMR), pharmacy, and pathology lab billing.'],
@@ -943,7 +943,7 @@ class BlogSeeder extends Seeder
                 'meta_title' => 'Billing Software for Small Businesses (2026) | GST & POS Guide',
                 'meta_description' => 'Guide to retail billing software in Lucknow. Barcode scanning, thermal receipt printing, dynamic UPI QR payments, and GST tax invoicing.',
                 'meta_keywords' => 'billing software in lucknow, pos billing software lucknow, gst invoicing software, retail POS software lucknow',
-                'canonical_url' => route('blog.show', 'billing-software-for-small-businesses'),
+                'canonical_url' => route('blogs.show', 'billing-software-for-small-businesses'),
                 'schema_type' => 'BlogPosting',
                 'faqs' => [
                     ['question' => 'How much does retail POS billing software cost in Lucknow?', 'answer' => 'Offline POS billing software starts from ₹15,000, while multi-terminal cloud POS software ranges from ₹25,000 to ₹65,000.'],
@@ -996,7 +996,7 @@ class BlogSeeder extends Seeder
                 'meta_title' => 'Inventory Management Software Guide (2026) | Stock Control',
                 'meta_description' => 'Comprehensive guide to inventory management software in Lucknow. Multi-warehouse stock tracking, batch expiry alerts, and purchase orders.',
                 'meta_keywords' => 'inventory management software lucknow, stock control software lucknow, warehouse inventory software',
-                'canonical_url' => route('blog.show', 'inventory-management-software-guide'),
+                'canonical_url' => route('blogs.show', 'inventory-management-software-guide'),
                 'schema_type' => 'BlogPosting',
                 'faqs' => [
                     ['question' => 'What is inventory management software?', 'answer' => 'Software that tracks product stock quantities, warehouse transfers, purchase orders, sales deductions, and batch expiry dates.'],
@@ -1053,7 +1053,7 @@ class BlogSeeder extends Seeder
                 'meta_title' => 'Why Laravel 12 Is Best for Enterprise Software (2026)',
                 'meta_description' => 'Architectural guide on why Laravel 12 is the top framework for enterprise web applications, custom ERPs, and APIs in Lucknow.',
                 'meta_keywords' => 'laravel development in lucknow, laravel 12 enterprise, laravel software company lucknow, laravel framework guide',
-                'canonical_url' => route('blog.show', 'laravel-development-in-lucknow-guide'),
+                'canonical_url' => route('blogs.show', 'laravel-development-in-lucknow-guide'),
                 'schema_type' => 'BlogPosting',
                 'faqs' => [
                     ['question' => 'Why is Laravel 12 preferred over legacy PHP frameworks?', 'answer' => 'Laravel 12 provides modern PHP 8.2+ features, built-in Eloquent ORM, automated security middleware, and a massive ecosystem.'],
@@ -1105,7 +1105,7 @@ class BlogSeeder extends Seeder
                 'meta_title' => 'PHP Development in Lucknow (2026) | Modern PHP 8.2+ Guide',
                 'meta_description' => 'Guide to modern PHP 8.2+ web development in Lucknow. OOP architecture, JIT performance, and legacy procedural code refactoring.',
                 'meta_keywords' => 'php development in lucknow, php 8.2 developers lucknow, legacy php refactoring, custom php software lucknow',
-                'canonical_url' => route('blog.show', 'php-development-in-lucknow-guide'),
+                'canonical_url' => route('blogs.show', 'php-development-in-lucknow-guide'),
                 'schema_type' => 'BlogPosting',
                 'faqs' => [
                     ['question' => 'Is PHP still a relevant language for modern web development in 2026?', 'answer' => 'Absolutely. PHP 8.2+ powers over 75% of active websites worldwide, offering unmatched performance, ecosystem depth, and developer availability.'],
@@ -1157,7 +1157,7 @@ class BlogSeeder extends Seeder
                 'meta_title' => 'Flutter App Development in Lucknow (2026) | iOS & Android',
                 'meta_description' => 'Learn why Flutter is the best framework for cross-platform iOS and Android app development in Lucknow. Native performance and 40% cost savings.',
                 'meta_keywords' => 'flutter app development in lucknow, flutter developers lucknow, cross platform mobile apps, iOS android app lucknow',
-                'canonical_url' => route('blog.show', 'flutter-app-development-lucknow-guide'),
+                'canonical_url' => route('blogs.show', 'flutter-app-development-lucknow-guide'),
                 'schema_type' => 'BlogPosting',
                 'faqs' => [
                     ['question' => 'What is Google Flutter?', 'answer' => 'Flutter is Google\'s open-source UI software development kit for building natively compiled iOS, Android, Web, and Desktop apps from a single Dart codebase.'],
@@ -1209,7 +1209,7 @@ class BlogSeeder extends Seeder
                 'meta_title' => 'Top Web Development Trends in 2026 | Tech Predictions',
                 'meta_description' => 'Explore top web development trends in 2026. AI integrations, PWA apps, sub-second PageSpeed optimization, and modern web frameworks.',
                 'meta_keywords' => 'web development trends 2026, web technology future, ai web apps, pagespeed optimization 2026',
-                'canonical_url' => route('blog.show', 'web-development-trends-2026'),
+                'canonical_url' => route('blogs.show', 'web-development-trends-2026'),
                 'schema_type' => 'BlogPosting',
                 'faqs' => [
                     ['question' => 'What is the biggest web development trend in 2026?', 'answer' => 'Embedding AI machine learning micro-services into web applications for real-time personalization and automated user support.'],
@@ -1260,7 +1260,7 @@ class BlogSeeder extends Seeder
                 'meta_title' => 'Mobile App Development Trends 2026 | App Engineering',
                 'meta_description' => 'Explore 2026 mobile app development trends. Cross-platform Flutter apps, WebSockets live tracking, biometric security, and AI integrations.',
                 'meta_keywords' => 'mobile app trends 2026, flutter app trends, mobile app security, live tracking app 2026',
-                'canonical_url' => route('blog.show', 'mobile-app-development-trends-2026'),
+                'canonical_url' => route('blogs.show', 'mobile-app-development-trends-2026'),
                 'schema_type' => 'BlogPosting',
                 'faqs' => [
                     ['question' => 'What is the dominant mobile app framework in 2026?', 'answer' => 'Google Flutter leads cross-platform mobile development due to single codebase efficiency and 60fps native performance.'],
@@ -1312,7 +1312,7 @@ class BlogSeeder extends Seeder
                 'meta_title' => 'AI Software Development Guide (2026) | ML Integration',
                 'meta_description' => 'Learn how to integrate Artificial Intelligence and Machine Learning models into custom web and mobile software applications.',
                 'meta_keywords' => 'ai software development, machine learning integration, python ai backend, ai chatbot development lucknow',
-                'canonical_url' => route('blog.show', 'ai-software-development-guide'),
+                'canonical_url' => route('blogs.show', 'ai-software-development-guide'),
                 'schema_type' => 'BlogPosting',
                 'faqs' => [
                     ['question' => 'What is AI software development?', 'answer' => 'AI software development involves embedding machine learning algorithms, natural language processing (NLP), or LLM APIs into web and mobile applications.'],
@@ -1366,7 +1366,7 @@ class BlogSeeder extends Seeder
                 'meta_title' => 'The Software Development Process Explained Step-by-Step',
                 'meta_description' => 'Walkthrough of the 6-phase Agile software development lifecycle. Discovery, Figma UI design, architecture, coding, testing, and deployment.',
                 'meta_keywords' => 'software development process, sdlc stages, agile software development lucknow, software lifecycle',
-                'canonical_url' => route('blog.show', 'software-development-process-explained'),
+                'canonical_url' => route('blogs.show', 'software-development-process-explained'),
                 'schema_type' => 'BlogPosting',
                 'faqs' => [
                     ['question' => 'What is the Agile software development methodology?', 'answer' => 'Agile breaks software projects into 2-week sprint cycles with regular client demos and milestone reviews.'],
@@ -1415,7 +1415,7 @@ class BlogSeeder extends Seeder
                 'meta_title' => 'How Much Does Custom Software Cost? (2026) | Price Guide',
                 'meta_description' => 'Transparent budget guide for custom software development. Compare pricing models, cost drivers, and milestone estimation strategies.',
                 'meta_keywords' => 'how much does custom software cost, software pricing guide, custom web app cost, software development budget',
-                'canonical_url' => route('blog.show', 'how-much-does-custom-software-cost'),
+                'canonical_url' => route('blogs.show', 'how-much-does-custom-software-cost'),
                 'schema_type' => 'BlogPosting',
                 'faqs' => [
                     ['question' => 'What is the average cost of custom business software in Lucknow?', 'answer' => 'Custom business software averages between ₹45,000 for mid-sized web tools to ₹2.5+ Lakhs for enterprise suites.'],
@@ -1468,7 +1468,7 @@ class BlogSeeder extends Seeder
                 'meta_title' => 'How Long Does Software Development Take? (2026 Timelines)',
                 'meta_description' => 'Realistic project timelines for software development. Discover delivery schedules for websites, mobile apps, CRMs, and enterprise ERPs.',
                 'meta_keywords' => 'how long does software development take, software development timeline, web app timeline, mobile app turnaround',
-                'canonical_url' => route('blog.show', 'how-long-does-software-development-take'),
+                'canonical_url' => route('blogs.show', 'how-long-does-software-development-take'),
                 'schema_type' => 'BlogPosting',
                 'faqs' => [
                     ['question' => 'How long does it take to develop a custom software application?', 'answer' => 'Timelines range from 2-4 weeks for basic web portals to 8-16 weeks for complex enterprise ERP suites.'],

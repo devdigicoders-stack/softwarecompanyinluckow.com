@@ -360,4 +360,61 @@ class PostController extends Controller
 
         return response()->json(['error' => 'Failed to upload image.'], 400);
     }
+
+    public function getIpViews(Post $post): JsonResponse
+    {
+        $views = $post->views()
+            ->latest('id')
+            ->get(['ip_address', 'user_agent', 'created_at'])
+            ->map(function ($view) {
+                return [
+                    'ip_address' => $view->ip_address,
+                    'user_agent' => $view->user_agent ?? 'Unknown User Agent',
+                    'browser_info' => $this->parseUserAgent($view->user_agent),
+                    'viewed_at' => $view->created_at ? $view->created_at->format('M d, Y h:i A') : 'N/A',
+                ];
+            });
+
+        return response()->json([
+            'post_title' => $post->title,
+            'total_views' => $post->view_count,
+            'unique_ips_count' => $views->pluck('ip_address')->unique()->count(),
+            'views' => $views,
+        ]);
+    }
+
+    private function parseUserAgent(?string $ua): string
+    {
+        if (! $ua) {
+            return 'Unknown Browser';
+        }
+
+        $platform = 'Unknown OS';
+        if (preg_match('/windows|win32|win64/i', $ua)) {
+            $platform = 'Windows';
+        } elseif (preg_match('/macintosh|mac os x/i', $ua)) {
+            $platform = 'macOS';
+        } elseif (preg_match('/linux/i', $ua)) {
+            $platform = 'Linux';
+        } elseif (preg_match('/iphone|ipad|ipod/i', $ua)) {
+            $platform = 'iOS';
+        } elseif (preg_match('/android/i', $ua)) {
+            $platform = 'Android';
+        }
+
+        $browser = 'Browser';
+        if (preg_match('/chrome|crios/i', $ua) && ! preg_match('/edg|opr/i', $ua)) {
+            $browser = 'Chrome';
+        } elseif (preg_match('/firefox|fxios/i', $ua)) {
+            $browser = 'Firefox';
+        } elseif (preg_match('/safari/i', $ua) && ! preg_match('/chrome|crios/i', $ua)) {
+            $browser = 'Safari';
+        } elseif (preg_match('/edg/i', $ua)) {
+            $browser = 'Edge';
+        } elseif (preg_match('/opr|opera/i', $ua)) {
+            $browser = 'Opera';
+        }
+
+        return "{$browser} on {$platform}";
+    }
 }

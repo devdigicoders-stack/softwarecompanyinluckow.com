@@ -86,15 +86,16 @@
                     <thead>
                         <tr>
                             <th style="width: 70px;">Image</th>
-                            <th>Title</th>
-                            <th>Category</th>
-                            <th>Author</th>
-                            <th>Status</th>
-                            <th>Featured</th>
-                            <th>Trending</th>
-                            <th>Popular</th>
-                            <th>Date</th>
-                            <th class="text-end">Actions</th>
+                            <th style="min-width: 380px;">Title & Slug</th>
+                            <th style="white-space: nowrap;">Category</th>
+                            <th style="white-space: nowrap;">Author</th>
+                            <th style="white-space: nowrap;">Status</th>
+                            <th style="white-space: nowrap;">Featured</th>
+                            <th style="white-space: nowrap;">Trending</th>
+                            <th style="white-space: nowrap;">Popular</th>
+                            <th style="white-space: nowrap;">Views (IP Log)</th>
+                            <th style="white-space: nowrap;">Date</th>
+                            <th class="text-end" style="white-space: nowrap;">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -107,11 +108,11 @@
                                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=200&q=80';">
                                     </div>
                                 </td>
-                                <td>
-                                    <div class="fw-bold text-slate-900 line-clamp-1" style="max-width: 280px;" title="{{ $post->title }}">
+                                <td style="min-width: 380px; max-width: 550px;">
+                                    <div class="fw-bold text-slate-900" style="font-size: 0.92rem; line-height: 1.35;" title="{{ $post->title }}">
                                         {{ $post->title }}
                                     </div>
-                                    <small class="text-muted text-monospace" style="font-size: 0.76rem;">/blog/{{ $post->slug }}</small>
+                                    <small class="text-muted text-monospace d-block mt-0.5" style="font-size: 0.76rem; word-break: break-all;">/blogs/{{ $post->slug }}</small>
                                 </td>
                                 <td>
                                     <span class="badge-category">{{ $post->category->name ?? 'General' }}</span>
@@ -155,12 +156,19 @@
                                         @endif
                                     </button>
                                 </td>
+                                <td class="text-nowrap" style="white-space: nowrap;">
+                                    <button type="button" class="btn btn-sm btn-light border text-slate-800 fw-bold px-2.5 py-1 rounded-pill d-inline-flex align-items-center gap-1.5 shadow-2xs" onclick="openIpViewsModal({{ $post->id }})" title="Click to view IP Address visitor log" style="white-space: nowrap; font-size: 0.78rem;">
+                                        <i class="bi bi-eye-fill text-emerald-600"></i>
+                                        <span>{{ number_format($post->view_count) }}</span>
+                                        <span class="text-muted fw-normal">Views</span>
+                                    </button>
+                                </td>
                                 <td class="text-muted small">
                                     {{ $post->published_at ? $post->published_at->format('M d, Y') : $post->created_at->format('M d, Y') }}
                                 </td>
                                 <td class="text-end" style="white-space: nowrap;">
                                     <div class="d-inline-flex gap-1">
-                                        <a href="{{ route('blog.show', $post->slug) }}" target="_blank" class="btn-action-view" title="Preview on public website"><i class="bi bi-eye"></i></a>
+                                        <a href="{{ route('blogs.show', $post->slug) }}" target="_blank" class="btn-action-view" title="Preview on public website"><i class="bi bi-eye"></i></a>
                                         <a href="{{ route('admin.posts.edit', $post->id) }}" class="btn-action-edit" title="Edit Article"><i class="bi bi-pencil-square"></i></a>
                                         <button type="button" class="btn-action-delete" onclick="confirmDeletePost({{ $post->id }}, '{{ addslashes($post->title) }}')" title="Delete Article"><i class="bi bi-trash"></i></button>
                                         <form id="deletePostForm-{{ $post->id }}" action="{{ route('admin.posts.destroy', $post->id) }}" method="POST" class="d-none">
@@ -356,6 +364,114 @@
                 }
             });
         }
+
+        function openIpViewsModal(postId) {
+            const modal = new bootstrap.Modal(document.getElementById('ipViewsModal'));
+            const titleEl = document.getElementById('ipViewsPostTitle');
+            const totalViewsEl = document.getElementById('modalTotalViews');
+            const uniqueIpsEl = document.getElementById('modalUniqueIps');
+            const tableBody = document.getElementById('ipViewsTableBody');
+
+            titleEl.textContent = 'Loading article...';
+            totalViewsEl.textContent = '...';
+            uniqueIpsEl.textContent = '...';
+            tableBody.innerHTML = '<tr><td colspan="4" class="text-center py-4 text-muted"><div class="spinner-border spinner-border-sm text-primary me-2"></div> Loading IP logs...</td></tr>';
+            
+            modal.show();
+
+            const token = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content') || '';
+
+            fetch(`/admin/blogs/${postId}/ip-views`, {
+                headers: {
+                    'Accept': 'application/json',
+                    'X-CSRF-TOKEN': token
+                }
+            })
+            .then(res => res.json())
+            .then(data => {
+                titleEl.textContent = data.post_title;
+                totalViewsEl.textContent = data.total_views;
+                uniqueIpsEl.textContent = data.unique_ips_count;
+
+                if (data.views && data.views.length > 0) {
+                    tableBody.innerHTML = data.views.map((view, idx) => `
+                        <tr>
+                            <td class="small text-muted align-top">${idx + 1}</td>
+                            <td class="align-top">
+                                <span class="badge bg-dark-subtle text-dark border font-monospace px-2 py-1" style="font-size: 0.82rem;">
+                                    <i class="bi bi-laptop me-1 text-primary"></i> ${view.ip_address}
+                                </span>
+                            </td>
+                            <td class="align-top">
+                                <div class="fw-bold text-slate-800" style="font-size: 0.84rem;">
+                                    <i class="bi bi-globe me-1 text-primary"></i> ${view.browser_info}
+                                </div>
+                                <div class="text-muted small mt-1 text-break font-monospace" style="font-size: 0.73rem; word-break: break-all;">
+                                    ${view.user_agent}
+                                </div>
+                            </td>
+                            <td class="align-top text-nowrap"><small class="text-muted"><i class="bi bi-clock me-1 text-emerald-600"></i> ${view.viewed_at}</small></td>
+                        </tr>
+                    `).join('');
+                } else {
+                    tableBody.innerHTML = '<tr><td colspan="4" class="text-center py-4 text-muted"><i class="bi bi-info-circle me-1"></i> No IP view records found for this article yet.</td></tr>';
+                }
+            })
+            .catch(err => {
+                console.error('Error fetching IP views:', err);
+                tableBody.innerHTML = '<tr><td colspan="4" class="text-center py-4 text-danger"><i class="bi bi-exclamation-triangle-fill me-1"></i> Failed to load IP logs.</td></tr>';
+            });
+        }
     </script>
+
+    <!-- IP Views Log Modal -->
+    <div class="modal fade" id="ipViewsModal" tabindex="-1" aria-labelledby="ipViewsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content glass-modal border-0 shadow-lg" style="border-radius: 16px;">
+                <div class="modal-header border-bottom px-4 py-3">
+                    <div>
+                        <h5 class="modal-title fw-bold text-slate-900 mb-0" id="ipViewsModalLabel"><i class="bi bi-shield-lock-fill text-emerald-600 me-2"></i> IP Views & Visitor Log</h5>
+                        <small class="text-muted font-monospace" id="ipViewsPostTitle">Article title...</small>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <div class="p-3 bg-light rounded-3 border text-center">
+                                <span class="text-muted small d-block mb-1">Total Post Views</span>
+                                <h4 class="fw-bold text-emerald-600 mb-0" id="modalTotalViews">0</h4>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-3 bg-light rounded-3 border text-center">
+                                <span class="text-muted small d-block mb-1">Unique IP Visitors</span>
+                                <h4 class="fw-bold text-primary mb-0" id="modalUniqueIps">0</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-responsive rounded-3 border" style="max-height: 320px; overflow-y: auto;">
+                        <table class="table table-hover align-middle mb-0">
+                            <thead class="bg-light sticky-top" style="z-index: 1;">
+                                <tr>
+                                    <th>#</th>
+                                    <th>IP Address</th>
+                                    <th>User Agent / Browser</th>
+                                    <th>Visit Timestamp</th>
+                                </tr>
+                            </thead>
+                            <tbody id="ipViewsTableBody">
+                                <tr><td colspan="4" class="text-center py-4 text-muted"><div class="spinner-border spinner-border-sm text-primary me-2"></div> Loading IP logs...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer border-top px-4 py-2.5">
+                    <button type="button" class="btn btn-secondary text-white fw-bold px-4 rounded-3" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     @endpush
 </x-admin-layout>

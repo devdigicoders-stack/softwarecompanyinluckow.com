@@ -21,12 +21,12 @@
                 </div>
 
                 <div class="col-lg-6">
-                    <form action="{{ route('blog.index') }}" method="GET" id="searchForm" class="w-100 ms-lg-auto" style="max-width: 540px;">
+                    <form action="{{ route('blogs.index') }}" method="GET" id="searchForm" class="w-100 ms-lg-auto" style="max-width: 540px;">
                         <div class="hero-search-pill position-relative d-flex align-items-center bg-white rounded-pill p-1.5 shadow-lg border border-white-20">
                             <span class="ps-3 pe-2 text-emerald-600 d-flex align-items-center"><i class="bi bi-search fs-5" style="color: #059669;"></i></span>
                             <input type="text" name="search" id="searchInput" class="form-control border-0 shadow-none bg-transparent py-2.5 px-1 text-slate-800 fw-medium" placeholder="Search articles, guides & topics..." value="{{ request('search') }}" style="font-size: 0.95rem;">
                             @if(request('search'))
-                                <a href="{{ route('blog.index') }}" class="btn text-slate-400 p-0 me-2" title="Clear Search"><i class="bi bi-x-circle-fill fs-5"></i></a>
+                                <a href="{{ route('blogs.index') }}" class="btn text-slate-400 p-0 me-2" title="Clear Search"><i class="bi bi-x-circle-fill fs-5"></i></a>
                             @endif
                             <button class="btn rounded-pill px-4 py-2.5 fw-bold text-white flex-shrink-0 d-inline-flex align-items-center gap-1.5 shadow-sm" type="submit" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%); border: none;">
                                 <span>Search</span> <i class="bi bi-arrow-right-short fs-5"></i>
@@ -114,7 +114,7 @@
                         search: currentSearch
                     });
 
-                    fetch("{{ route('blog.index') }}?" + params.toString(), {
+                    fetch("{{ route('blogs.index') }}?" + params.toString(), {
                         headers: {
                             'X-Requested-With': 'XMLHttpRequest'
                         }
@@ -123,7 +123,7 @@
                         .then(data => {
                             container.innerHTML = data.html;
                             container.style.opacity = '1';
-                            window.history.pushState({}, '', "{{ route('blog.index') }}?" + params.toString());
+                            window.history.pushState({}, '', "{{ route('blogs.index') }}?" + params.toString());
                         })
                         .catch(err => {
                             container.style.opacity = '1';

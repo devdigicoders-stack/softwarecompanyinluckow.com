@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Faq;
 use App\Models\Post;
+use App\Models\PostView;
 use App\Models\Service;
 use App\Models\Tag;
 use Illuminate\Contracts\View\View;
@@ -68,7 +69,7 @@ class BlogController extends Controller
             ->take(5)
             ->get();
 
-        $faqs = Faq::getForPage('blog')->toArray();
+        $faqs = Faq::getForPage('blogs')->concat(Faq::getForPage('blog'))->toArray();
 
         $breadcrumbs = [
             'Home' => route('home'),
@@ -93,8 +94,22 @@ class BlogController extends Controller
             ->where('is_published', true)
             ->firstOrFail();
 
-        // Increment views
-        $post->increment('view_count');
+        // Record unique view per IP address
+        $clientIp = request()->ip() ?? '127.0.0.1';
+        $hasViewed = PostView::where('post_id', $post->id)
+            ->where('ip_address', $clientIp)
+            ->exists();
+
+        if (! $hasViewed) {
+            PostView::create([
+                'post_id' => $post->id,
+                'ip_address' => $clientIp,
+                'user_agent' => substr(request()->userAgent() ?? '', 0, 255),
+            ]);
+
+            $post->increment('view_count');
+            $post->refresh();
+        }
 
         $post->faqs = $this->ensureTenPostFaqs($post->faqs ?? [], $post->title);
 
@@ -123,8 +138,8 @@ class BlogController extends Controller
 
         $breadcrumbs = [
             'Home' => route('home'),
-            'Blog' => route('blog.index'),
-            $post->category ? $post->category->name : 'Tech News' => $post->category ? route('blog.index', ['category' => $post->category->slug]) : route('blog.index'),
+            'Blogs' => route('blogs.index'),
+            $post->category ? $post->category->name : 'Tech News' => $post->category ? route('blogs.index', ['category' => $post->category->slug]) : route('blogs.index'),
             $post->title => null,
         ];
 

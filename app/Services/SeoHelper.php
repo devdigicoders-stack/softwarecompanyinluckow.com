@@ -145,7 +145,7 @@ class SeoHelper
             ],
             'mainEntityOfPage' => [
                 '@type' => 'WebPage',
-                '@id' => route('blog.show', $post->slug),
+                '@id' => route('blogs.show', $post->slug),
             ],
         ];
     }

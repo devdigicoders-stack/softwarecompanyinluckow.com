@@ -191,7 +191,7 @@
                                         </td>
                                         <td class="text-end" style="white-space: nowrap;">
                                             <div class="d-inline-flex gap-1">
-                                                <a href="{{ route('blog.show', $post->slug) }}" target="_blank"
+                                                <a href="{{ route('blogs.show', $post->slug) }}" target="_blank"
                                                     class="btn-action-view" title="Preview Live"><i class="bi bi-eye"></i></a>
                                                 <a href="{{ route('admin.posts.edit', $post->id) }}" class="btn-action-edit"
                                                     title="Edit Article"><i class="bi bi-pencil-square"></i></a>

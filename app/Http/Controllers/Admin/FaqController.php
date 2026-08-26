@@ -37,7 +37,7 @@ class FaqController extends Controller
     public function create(): View
     {
         $distinctPages = Faq::distinct()->pluck('page_name')->toArray();
-        $defaultPages = ['contact', 'home', 'about', 'solutions', 'services', 'technology', 'locations', 'cost-guides', 'blog', 'best-technology-for-website-development'];
+        $defaultPages = ['contact', 'home', 'about', 'solutions', 'services', 'technology', 'locations', 'cost-guides', 'blogs', 'blog', 'best-technology-for-website-development'];
         $pages = array_unique(array_merge($defaultPages, $distinctPages));
         sort($pages);
 
@@ -73,7 +73,7 @@ class FaqController extends Controller
     public function edit(Faq $faq): View
     {
         $distinctPages = Faq::distinct()->pluck('page_name')->toArray();
-        $defaultPages = ['contact', 'home', 'about', 'solutions', 'services', 'technology', 'locations', 'cost-guides', 'blog', 'best-technology-for-website-development'];
+        $defaultPages = ['contact', 'home', 'about', 'solutions', 'services', 'technology', 'locations', 'cost-guides', 'blogs', 'blog', 'best-technology-for-website-development'];
         $pages = array_unique(array_merge($defaultPages, $distinctPages));
         sort($pages);
 

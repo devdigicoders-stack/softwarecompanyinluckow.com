@@ -77,7 +77,7 @@
                                 class="bi bi-envelope fs-6"></i></span>
                         <input type="email" name="email" id="emailInput"
                             class="form-control glass-input border-start-0 @error('email') is-invalid @enderror"
-                            value="{{ old('email', 'admin@softwarecompanyinlucknow.com') }}"
+                            value="{{ old('email') }}"
                             placeholder="admin@example.com" required autofocus style="height: 48px;">
                     </div>
                 </div>

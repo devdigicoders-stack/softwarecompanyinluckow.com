@@ -23,7 +23,7 @@
 
 <article class="news-card-featured w-100 h-100 d-flex flex-column {{ !empty($post->is_featured) ? 'is-featured-card' : '' }}">
     <div class="news-card-img-wrap flex-shrink-0 position-relative">
-        <a href="{{ route('blog.show', $post->slug) }}" class="d-block w-100 h-100 position-relative">
+        <a href="{{ route('blogs.show', $post->slug) }}" class="d-block w-100 h-100 position-relative">
             <img src="{{ $imgSrc }}" 
                  alt="{{ $post->alt_text ?? $post->title }}" 
                  loading="lazy"
@@ -59,7 +59,7 @@
         </div>
 
         <h3 class="news-card-title">
-            <a href="{{ route('blog.show', $post->slug) }}">{{ $post->title }}</a>
+            <a href="{{ route('blogs.show', $post->slug) }}">{{ $post->title }}</a>
         </h3>
 
         <p class="news-card-excerpt">
@@ -70,7 +70,7 @@
             <span class="small text-slate-400 font-monospace" style="font-size: 0.75rem;">
                 <i class="bi bi-calendar3 me-1"></i> {{ $post->published_at ? $post->published_at->format('M d, Y') : $post->created_at->format('M d, Y') }}
             </span>
-            <a href="{{ route('blog.show', $post->slug) }}" class="link-read-more">
+            <a href="{{ route('blogs.show', $post->slug) }}" class="link-read-more">
                 Read Article <i class="bi bi-arrow-right ms-1 transition-icon"></i>
             </a>
         </div>

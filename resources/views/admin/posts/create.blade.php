@@ -64,7 +64,7 @@
                     <div class="mb-3">
                         <label for="slug" class="glass-label">URL Slug</label>
                         <div class="input-group">
-                            <span class="input-group-text bg-white border-end-0 text-muted small">/blog/</span>
+                            <span class="input-group-text bg-white border-end-0 text-muted small">/blogs/</span>
                             <input type="text" name="slug" id="slug" class="form-control glass-input border-start-0 @error('slug') is-invalid @enderror" value="{{ old('slug') }}" placeholder="auto-generated-slug-from-title">
                         </div>
                         <small class="text-muted" style="font-size: 0.76rem;">Auto-generates from title. You can manually customize the URL slug.</small>
@@ -223,7 +223,7 @@
 
                         <div class="google-preview-card">
                             <div class="google-preview-url">
-                                softwarecompanyinlucknow.com <cite id="googlePreviewSlug">/blog/sample-slug</cite>
+                                softwarecompanyinlucknow.com <cite id="googlePreviewSlug">/blogs/sample-slug</cite>
                             </div>
                             <a href="javascript:void(0)" class="google-preview-title d-block" id="googlePreviewTitle">
                                 Sample Article SEO Title | Software Company in Lucknow
@@ -261,7 +261,7 @@
                         <!-- Canonical URL -->
                         <div class="mb-3">
                             <label for="canonical_url" class="glass-label">Canonical URL</label>
-                            <input type="url" name="canonical_url" id="canonical_url" class="form-control glass-input" value="{{ old('canonical_url') }}" placeholder="https://softwarecompanyinlucknow.com/blog/slug">
+                            <input type="url" name="canonical_url" id="canonical_url" class="form-control glass-input" value="{{ old('canonical_url') }}" placeholder="https://softwarecompanyinlucknow.com/blogs/slug">
                         </div>
 
                         <!-- Schema Type -->
@@ -456,7 +456,7 @@
                 const currentDesc = metaDescInput.value || excerptInput.value || 'Looking for custom software development in Lucknow? Explore software architecture insights, website costs, and mobile app guides...';
 
                 googleTitle.textContent = currentTitle + ' | Software Company in Lucknow';
-                googleSlug.textContent = '/blog/' + currentSlug;
+                googleSlug.textContent = '/blogs/' + currentSlug;
                 googleDesc.textContent = currentDesc;
 
                 // Character counters

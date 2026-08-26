@@ -329,7 +329,7 @@
                 <div class="col-lg-7">
                     <div class="d-flex align-items-center justify-content-between mb-4">
                         <h3 class="fw-bold text-slate-900 mb-0">Latest Articles & Insights</h3>
-                        <a href="{{ route('blog.index') }}" class="btn btn-outline-primary btn-sm fw-bold px-3 py-1.5 rounded-3">
+                        <a href="{{ route('blogs.index') }}" class="btn btn-outline-primary btn-sm fw-bold px-3 py-1.5 rounded-3">
                             View All Articles <i class="bi bi-arrow-right ms-1"></i>
                         </a>
                     </div>
@@ -346,7 +346,7 @@
                                     </div>
                                     <div class="flex-grow-1">
                                         <h6 class="article-card-title">
-                                            <a href="{{ route('blog.show', $post->slug) }}">
+                                            <a href="{{ route('blogs.show', $post->slug) }}">
                                                 {{ $post->title }}
                                             </a>
                                         </h6>
