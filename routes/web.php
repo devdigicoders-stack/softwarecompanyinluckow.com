@@ -71,6 +71,8 @@ Route::get('/technology/{slug}', [TechnologyController::class, 'show'])->name('t
 // Blog & Tech News Routes
 Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
 Route::get('/blogs/{slug}', [BlogController::class, 'show'])->name('blogs.show');
+Route::get('/blog', fn () => redirect()->route('blogs.index', status: 301));
+Route::get('/blog/{slug}', fn ($slug) => redirect()->route('blogs.show', $slug, status: 301));
 // Local Lucknow IT Hub Routes
 Route::get('/location/{slug}', [LocationController::class, 'show'])->name('locations.show');
 

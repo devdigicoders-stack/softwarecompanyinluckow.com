@@ -8,7 +8,7 @@
         <!-- Edge-to-Edge Right Side Image for Desktop -->
         <div class="hero-edge-image-wrap d-none d-lg-block">
             <img src="{{ asset('images/lucknow_monuments_skyline.jpg') }}"
-                alt="Lucknow Monuments Skyline Rumi Darwaza & Bara Imambara" class="hero-edge-img">
+                alt="Lucknow Monuments Skyline Rumi Darwaza & Bara Imambara" title="Software Company in Lucknow - IT & Monuments Skyline" class="hero-edge-img">
             <div class="hero-edge-overlay"></div>
         </div>
 
@@ -57,7 +57,7 @@
                 <div class="col-12 d-lg-none mt-3">
                     <div class="hero-mobile-image-card position-relative rounded-4 overflow-hidden shadow-sm border">
                         <img src="{{ asset('images/lucknow_monuments_skyline.jpg') }}"
-                            alt="Lucknow Monuments Skyline Rumi Darwaza & Bara Imambara"
+                            alt="Lucknow Monuments Skyline Rumi Darwaza & Bara Imambara" title="Software & IT Hub of Lucknow"
                             class="w-100 object-fit-cover" style="height: 200px; display: block;">
                         <div class="position-absolute bottom-0 start-0 end-0 p-2 bg-dark bg-opacity-75 text-white text-center extra-small fw-semibold">
                             <i class="bi bi-geo-alt-fill text-warning me-1"></i> Software & IT Hub of Lucknow
@@ -158,7 +158,7 @@
                     <div class="cost-card-box h-100">
                         <div class="cost-card-img">
                             <img src="{{ asset('images/cost-guides/software-development-cost.png') }}"
-                                alt="Software Development Cost">
+                                alt="Software Development Cost" title="Software Development Cost in Lucknow">
                         </div>
                         <div class="cost-card-body text-center">
                             <h6 class="cost-card-title">
@@ -175,7 +175,7 @@
                     <div class="cost-card-box h-100">
                         <div class="cost-card-img">
                             <img src="{{ asset('images/cost-guides/website-development-cost.jpg') }}"
-                                alt="Website Development Cost">
+                                alt="Website Development Cost" title="Website Development Cost in Lucknow">
                         </div>
                         <div class="cost-card-body text-center">
                             <h6 class="cost-card-title">
@@ -192,7 +192,7 @@
                     <div class="cost-card-box h-100">
                         <div class="cost-card-img">
                             <img src="{{ asset('images/cost-guides/mobile-app-development-cost.png') }}"
-                                alt="Mobile App Cost">
+                                alt="Mobile App Cost" title="Mobile App Development Cost in Lucknow">
                         </div>
                         <div class="cost-card-body text-center">
                             <h6 class="cost-card-title">
@@ -209,7 +209,7 @@
                     <div class="cost-card-box h-100">
                         <div class="cost-card-img">
                             <img src="{{ asset('images/cost-guides/erp-development-cost.png') }}"
-                                alt="ERP Software Cost">
+                                alt="ERP Software Cost" title="ERP Software Cost in Lucknow">
                         </div>
                         <div class="cost-card-body text-center">
                             <h6 class="cost-card-title">
@@ -226,7 +226,7 @@
                     <div class="cost-card-box h-100">
                         <div class="cost-card-img">
                             <img src="{{ asset('images/cost-guides/crm-software-cost.jpg') }}"
-                                alt="CRM Software Cost">
+                                alt="CRM Software Cost" title="CRM Software Cost in Lucknow">
                         </div>
                         <div class="cost-card-body text-center">
                             <h6 class="cost-card-title">
@@ -243,7 +243,7 @@
                     <div class="cost-card-box h-100">
                         <div class="cost-card-img">
                             <img src="{{ asset('images/cost-guides/custom-software-cost.jpg') }}"
-                                alt="Custom Software Development Cost">
+                                alt="Custom Software Development Cost" title="Custom Software Development Cost in Lucknow">
                         </div>
                         <div class="cost-card-body text-center">
                             <h6 class="cost-card-title">
@@ -341,7 +341,7 @@
                                     <div style="width: 110px; height: 85px; flex-shrink: 0; background: #090d16;"
                                         class="rounded-3 overflow-hidden">
                                         <img src="{{ $post->featured_image ? asset($post->featured_image) : 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80' }}"
-                                            alt="{{ $post->title }}" class="w-100 h-100 object-fit-cover"
+                                            alt="{{ $post->title }}" title="{{ $post->title }}" class="w-100 h-100 object-fit-cover"
                                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80';">
                                     </div>
                                     <div class="flex-grow-1">

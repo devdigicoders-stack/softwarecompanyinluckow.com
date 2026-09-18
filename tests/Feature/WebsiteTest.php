@@ -17,11 +17,13 @@ test('homepage loads successfully with target H1', function () {
 });
 
 test('blog index and article detail pages render successfully', function () {
-    $indexResponse = $this->get('/blog');
+    $this->get('/blog')->assertRedirect('/blogs');
+
+    $indexResponse = $this->get('/blogs');
     $indexResponse->assertStatus(200);
     $indexResponse->assertSee('Journal');
 
-    $articleResponse = $this->get('/blog/software-development-cost-in-lucknow');
+    $articleResponse = $this->get('/blogs/software-development-cost-in-lucknow');
     $articleResponse->assertStatus(200);
     $articleResponse->assertSee('Software Development Cost in Lucknow');
     $articleResponse->assertSee('schema.org');

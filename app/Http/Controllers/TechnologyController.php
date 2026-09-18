@@ -38,7 +38,16 @@ class TechnologyController extends Controller
 
     private function getTechDetails($slug)
     {
-        $data = $this->getTechMapBySlug($slug);
+        $aliasMap = [
+            'react-development' => 'reactjs-development',
+            'nodejs-development' => 'node-js-backend',
+            'python-development' => 'python-django',
+            'php-development' => 'procedural-php-vs-laravel',
+        ];
+        $targetSlug = $aliasMap[$slug] ?? $slug;
+
+        $data = $this->getTechMapBySlug($targetSlug);
+        $data['slug'] = $slug;
         $data['keywords'] = $data['keywords'] ?? ($data['h1'].', best technology for website, web development comparison, software company in lucknow, best software company in lucknow');
         $data['faqs'] = $this->ensureTenTechFaqs($data['faqs'] ?? [], $data['h1'] ?? $slug, $slug);
 
@@ -49,7 +58,7 @@ class TechnologyController extends Controller
     {
         $techMap = [
             'laravel-development' => [
-                'title' => 'Laravel Development in Lucknow: Enterprise Web Framework Guide',
+                'title' => 'Laravel Development in Lucknow | Best Enterprise Web Framework',
                 'h1' => 'Laravel Development Services & Framework Guide in Lucknow',
                 'icon' => 'bi-layers',
                 'meta_description' => 'Explore Laravel development capabilities in Lucknow. Understand why Laravel is the preferred PHP framework for scalable web applications, enterprise portals, and REST APIs.',

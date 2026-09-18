@@ -1,5 +1,6 @@
 <x-layout title="Technology News, Software Guides & IT Insights | Lucknow Tech Portal"
     description="Stay updated with software development trends, enterprise tech cost guides, ERP/CRM analysis, and local Lucknow IT ecosystem updates."
+    :canonical="route('blogs.index')"
     :breadcrumbs="$breadcrumbs"
     :faqs="$faqs ?? []">
     <!-- Portal Header Hero -->

@@ -2,7 +2,7 @@
     :title="$title"
     :description="$meta_description"
     :keywords="$keywords ?? ''"
-    :canonical="route('cost-guides.show', Str::slug($title))"
+    :canonical="route('cost-guides.show', $slug)"
     :breadcrumbs="$breadcrumbs"
     :faqs="$faqs"
 >

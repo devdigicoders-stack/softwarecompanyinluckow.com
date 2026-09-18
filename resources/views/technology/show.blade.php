@@ -2,7 +2,7 @@
     :title="$title"
     :description="$meta_description"
     :keywords="$keywords ?? ''"
-    :canonical="route('technology.show', Str::slug($h1))"
+    :canonical="route('technology.show', $slug)"
     :breadcrumbs="$breadcrumbs"
     :faqs="$faqs"
 >

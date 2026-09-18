@@ -454,11 +454,11 @@
                     </div>
 
                     <div class="d-flex gap-2 mb-3">
-                        <a href="https://www.facebook.com/Software Company in LucknowTech/" target="_blank" rel="noopener" class="social-icon-btn" title="Facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="https://x.com/Software Company in LucknowTech" target="_blank" rel="noopener" class="social-icon-btn" title="Twitter/X"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#" target="_blank" rel="noopener" class="social-icon-btn" title="Instagram"><i class="bi bi-instagram"></i></a>
-                        <a href="#" target="_blank" rel="noopener" class="social-icon-btn" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" target="_blank" rel="noopener" class="social-icon-btn" title="YouTube"><i class="bi bi-youtube"></i></a>
+                        <a href="https://www.facebook.com/DigiCodersTech/" target="_blank" rel="noopener" class="social-icon-btn" title="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://x.com/DigiCodersTech" target="_blank" rel="noopener" class="social-icon-btn" title="Twitter/X"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://www.instagram.com/digicoderstech" target="_blank" rel="noopener" class="social-icon-btn" title="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/digicoders/" target="_blank" rel="noopener" class="social-icon-btn" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://www.youtube.com/@digicoders" target="_blank" rel="noopener" class="social-icon-btn" title="YouTube"><i class="bi bi-youtube"></i></a>
                     </div>
 
                     <!-- Service Coverage Under Social Icons -->

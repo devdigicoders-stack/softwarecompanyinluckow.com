@@ -47,9 +47,11 @@ class SeoHelper
                 'availableLanguage' => ['English', 'Hindi'],
             ],
             'sameAs' => [
-                'https://facebook.com/softwarecompanyinlucknow',
-                'https://twitter.com/software_lko',
-                'https://linkedin.com/company/softwarecompanyinlucknow',
+                'https://www.facebook.com/DigiCodersTech/',
+                'https://x.com/DigiCodersTech',
+                'https://www.instagram.com/digicoderstech',
+                'https://www.linkedin.com/company/digicoders/',
+                'https://www.youtube.com/@digicoders',
             ],
         ];
     }
